@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPOM {
+public class Test3 {
 	private WebDriver driver; 
 	
-	public LoginPOM(WebDriver driver) {
+	public Test3(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -21,6 +21,13 @@ public class LoginPOM {
 	
 	@FindBy(id="form-login_submitAuth")
 	private WebElement loginBtn; 
+	
+	@FindBy(xpath="//img[@alt='sugan anbu']")
+	private WebElement linkdropdown; 
+	
+	@FindBy(xpath="//a[@id='logout_button']")
+	private WebElement logout;
+		
 	
 	public void sendUserName(String userName) {
 		this.userName.clear();
@@ -35,4 +42,13 @@ public class LoginPOM {
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
 	}
+	
+		public void dropdownclick() {
+		this.linkdropdown.click(); 
+	}
+		
+		public void logoutbutton() {
+			this.logout.click(); 
+		}	
+	
 }
